@@ -1,0 +1,136 @@
+@mixin todo {
+  color: #76828E;
+  width: 400px;
+  border: 1px solid #76828E;
+  border-radius: 5px;
+  position: relative;
+  margin: 5px 0;
+  transition: .4s all linear;
+  overflow: hidden;
+}
+
+@mixin button-icons {
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  position: absolute;
+  background-color: #76828E;
+  border-radius: 3px;
+  color: #fff;
+}
+
+@mixin icons {
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.todo {
+  @include todo;
+
+  :hover {
+    background-color: #d6e1ea;
+
+    i {
+      background-color: #76828E;
+    }
+
+    .edit, .check, .delete {
+      display: block;
+    }
+
+    .check {
+      background-color: #76828E;
+    }
+
+    .delete {
+      i {
+        background-color: #E12F1D;
+      }
+    }
+  }
+}
+
+.todo-text {
+  width: 320px;
+  padding: 1.5rem 0 1.5rem 2.5rem;
+}
+
+.todo-text-input {
+  width: 320px;
+  margin: 1rem 2.5rem;
+  padding: .5rem 1rem;
+  outline-color: #CACFD3;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+i {
+  font-size: 1.2rem;
+}
+
+
+.edit {
+  @include button-icons;
+
+  right: 35px;
+  display: none;
+
+  i {
+    @include icons;
+  }
+}
+
+.check {
+  @include button-icons;
+  width: 25px;
+  height: 25px;
+  left: 10px;
+  padding: 3px;
+}
+
+.delete {
+  @include button-icons;
+  right: 10px;
+  background-color: #E12F1D;
+  display: none;
+
+  i {
+    @include icons;
+  }
+}
+
+.edit-todo {
+  @include todo;
+
+  .delete {
+    display: block;
+  }
+}
+
+.opacity {
+  opacity: .6;
+}
+
+@media screen and (max-width: 400px) {
+  .todo {
+    width: 300px;
+
+    .todo-text {
+      width: 220px;
+    }
+
+    .edit, .check, .delete {
+      display: block;
+    }
+
+  }
+
+  .edit-todo {
+    width: 300px;
+
+    .todo-text-input {
+      width: 220px;
+    }
+  }
+}

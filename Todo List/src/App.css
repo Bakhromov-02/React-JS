@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+
+}
+
+.App {
+    overflow: hidden;
+    align-items: center;
+    font-family: -apple-system, sans-serif;
+}
+
+
+.todo-list {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
